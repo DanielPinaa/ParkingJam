@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+ 
+    <groupId>es.upm.pproject.parkingjam</groupId>
+    <artifactId>parking-jam</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+ 
+    <name>Parking Jam</name>
+    <url>http://www.example.com</url>
+  
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <sonar.language>java</sonar.language>
+		<sonar.host.url>https://costa.ls.fi.upm.es/sonar</sonar.host.url>
+		<sonar.qualitygate.wait>true</sonar.qualitygate.wait>
+		<sonar.projectName>parkingjam-210047</sonar.projectName>
+		<sonar.projectKey>es.upm.pproject.parkingjam:parking-jam:parkingjam:210047</sonar.projectKey>
+		<jacoco.version>0.8.6</jacoco.version>
+		<sonar.scm.provider>git</sonar.scm.provider>
+	
+		<sonar.coverage.exclusions>**/view/**,**/controller/**,**/App.java</sonar.coverage.exclusions>
+    </properties>
+
+    <dependencies>
+        <!-- Dependencies -->
+    	<dependency>
+	  		<groupId>org.slf4j</groupId>
+	  		<artifactId>slf4j-reload4j</artifactId>
+	  		<version>1.7.36</version>
+		</dependency>
+    
+        <!-- Testing dependencies-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.6.2</version>
+            <scope>test</scope>
+        </dependency>
+		
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M4</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>3.0.0-M1</version>
+            </plugin>
+			<plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-compiler-plugin</artifactId>
+            	<version>3.8.1</version>
+            	<configuration>
+                	<source>1.8</source>
+                	<target>1.8</target>
+            	</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<mainClass>es.upm.pproject.parkingjam.parking_jam.App</mainClass>
+				</configuration>
+			</plugin>
+
+		<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.6</version>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<phase>test-compile</phase>
+					</execution>
+					<execution>
+						<id>report</id>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<phase>test</phase>
+					</execution>
+
+				</executions>
+			</plugin>
+
+        </plugins>
+    </build>
+</project>

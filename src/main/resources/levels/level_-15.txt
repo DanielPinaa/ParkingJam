@@ -1,0 +1,10 @@
+Level 15 (dimensions different from specified [smaller])
+4 4
+++++++++
++aabbbc+
++   * c+
++d  *  +
++d fff +
++de    +
++ e ggg+
+++++@+++

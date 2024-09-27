@@ -1,0 +1,10 @@
+Level 14 (dimensions different from specified [greater])
+14 14
+++++++++
++aabbbc+
++   * c+
++d  *  +
++d fff +
++de    +
++ e ggg+
+++++@+++

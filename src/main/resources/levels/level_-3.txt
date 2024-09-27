@@ -1,0 +1,10 @@
+Level 3 (2 exits)
+8 8
+++++@+++
++aabbbc+
++   * c+
++d  *  +
++d fff +
++de    +
++ e ggg+
+++++@+++
